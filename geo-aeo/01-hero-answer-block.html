@@ -1,0 +1,120 @@
+<!--
+  ملف 1 من 3 — الأولوية الأولى: فقرة الإجابة المباشرة + تصحيح أرقام العدّادات
+  الجهد: أقل من 30 دقيقة
+  المكان: Elementor ← الصفحة الرئيسية ← ويدجت HTML رقم 2ff7533 (الويدجت التي تحوي الصفحة كلها)
+-->
+
+<!-- ============================================================
+     الجزء (أ): فقرة الإجابة المباشرة
+     أين تُلصق: داخل <div class="hero-content reveal visible">
+     مباشرة بعد إغلاق </p> الخاصة بـ hero-subtitle وقبل <div class="hero-btns">
+     ============================================================ -->
+
+<p class="hero-answer">
+    <strong>ييوو علوان</strong> مكتب استيراد عربي مقره مدينة ييوو الصينية، يديره
+    <strong>حسن علوان</strong> المقيم فيها منذ 2009. يبحث عن الموردين في سوق الفوتيان،
+    ويتفاوض بالصينية، ويفحص البضاعة قبل الشحن، ويشحن حاويات 20 و40 قدماً إلى أكثر من
+    50 دولة، بخبرة تتجاوز 19 عاماً و4,000 كونتينر مشحون.
+    الخدمة للمستوردين بكميات كونتينر فقط.
+</p>
+
+<p class="page-updated">
+    <span>آخر تحديث:</span>
+    <time datetime="2026-09-19">19 سبتمبر 2026</time>
+    <span class="sep">·</span>
+    <span>الكاتب: حسن علوان — مستشار تجارة دولية، ييوو</span>
+</p>
+
+<!-- ضِف هذا الـ CSS في نهاية كتلة <style> الموجودة داخل نفس الويدجت -->
+<style>
+.hero-answer{
+    max-width: 60ch;
+    margin: 18px auto 0;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--text);
+    text-align: start;
+}
+.hero-answer strong{ font-weight: 700; }
+.page-updated{
+    margin: 10px auto 0;
+    font-size: 13px;
+    color: var(--muted, #6b6b6b);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+}
+.page-updated .sep{ opacity: .5; }
+@media (max-width: 600px){
+    .hero-answer{ font-size: 16px; }
+}
+</style>
+
+
+<!-- ============================================================
+     الجزء (ب): تصحيح أرقام العدّادات — الأهم تقنياً
+     ============================================================
+
+     المشكلة الفعلية (أخطر مما يبدو):
+     العدّادات تبدأ من رقم وهمي وتتحرك بـ JavaScript نحو الرقم الحقيقي.
+     أي زاحف لا ينفّذ JavaScript — ومنها معظم زواحف نماذج اللغة —
+     يقرأ رقم البداية، لا رقم النهاية. أي أن الصفحة اليوم تقول للزواحف:
+
+         10 سنة خبرة          (والصحيح 19)
+         2,311 كونتينر         (والصحيح 4,000)
+         28 دولة               (والصحيح 50)
+         في الصين منذ عام 1,160 (والصحيح 2009)
+
+     هذه ليست أرقاماً ناقصة، بل أرقام خاطئة تُنشر عنك.
+
+     الحل: اجعل النص الظاهر هو الرقم الصحيح، ودع JavaScript يبدأ من الصفر
+     إن أردت الحركة. أي زاحف سيقرأ الرقم الصحيح فوراً.
+     ============================================================ -->
+
+<!-- استبدل كتلة STATS كاملة بهذه -->
+<section class="stats-section" id="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card reveal visible">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-number" data-target="19" data-from="0">19</div>
+                <div class="stat-plus">+</div>
+                <div class="stat-label">سنة خبرة في التجارة الدولية</div>
+            </div>
+            <div class="stat-card reveal visible">
+                <div class="stat-icon">🤝</div>
+                <div class="stat-number" data-target="4000" data-from="0">4,000</div>
+                <div class="stat-plus">+</div>
+                <div class="stat-label">كونتينر مشحون من الصين</div>
+            </div>
+            <div class="stat-card reveal visible">
+                <div class="stat-icon">🌍</div>
+                <div class="stat-number" data-target="50" data-from="0">50</div>
+                <div class="stat-plus">+</div>
+                <div class="stat-label">دولة نخدمها في القارات الخمس</div>
+            </div>
+            <div class="stat-card reveal visible">
+                <div class="stat-icon">📦</div>
+                <div class="stat-number" data-target="2009" data-from="2009">2009</div>
+                <div class="stat-label">في الصين منذ عام</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--
+  ملاحظة على البطاقة الرابعة: "في الصين منذ عام 2009" سنة، لا عدّاد.
+  عدّها من 1,160 إلى 2009 بلا معنى. اجعل data-from مساوياً لـ data-target
+  حتى يتوقف العدّ عليها، أو احذف data-target منها نهائياً.
+
+  إن كان سكربت العدّاد لديك يقرأ النص الداخلي كنقطة بداية،
+  عدّله ليقرأ data-from بدلاً من ذلك:
+
+      const from = parseInt(el.dataset.from ?? '0', 10);
+      const to   = parseInt(el.dataset.target, 10);
+
+  وإن كان الأسهل: احذف حركة العدّاد كلياً. الرقم الثابت المقروء
+  أنفع لمحركات الإجابة من حركة لا يراها إلا الزائر البشري.
+-->

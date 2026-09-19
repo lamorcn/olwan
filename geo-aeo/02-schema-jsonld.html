@@ -1,0 +1,200 @@
+<!--
+  ملف 2 من 3 — الأولوية الثانية: البيانات المهيكلة JSON-LD
+  الجهد: 1 إلى 3 ساعات (أغلبها جمع القيم الناقصة، لا البرمجة)
+  الصفحة اليوم فيها صفر كتل JSON-LD رغم تنصيب Rank Math.
+
+  أين تُلصق — اختر واحداً:
+    (أ) Rank Math ← Titles & Meta ← Local SEO / Schema ← Custom Schema، أو
+    (ب) إضافة WPCode أو Header Footer Code Manager ← سكربت في <head> للصفحة الرئيسية فقط، أو
+    (ج) في نهاية ويدجت HTML رقم 2ff7533 نفسها (يعمل، لكن (أ) أو (ب) أنظف).
+
+  قبل اللصق: ابحث عن REPLACE_WITH_ واملأ 4 قيم فقط.
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yiwuolwan.com/#organization",
+      "name": "ييوو علوان",
+      "alternateName": [
+        "Yiwu Olwan",
+        "OLWAN Group",
+        "شركة علوان للتجارة الدولية والشحن"
+      ],
+      "description": "مكتب استيراد عربي في مدينة ييوو الصينية منذ 2009. بحث عن الموردين، تفاوض بالصينية، فحص جودة قبل الشحن، وشحن حاويات 20 و40 قدماً لأكثر من 50 دولة.",
+      "url": "https://yiwuolwan.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://yiwuolwan.com/wp-content/uploads/2026/03/logo.pdf.webp"
+      },
+      "image": "https://yiwuolwan.com/wp-content/uploads/2026/03/import-from-china-1.png",
+      "foundingDate": "2009",
+      "founder": { "@id": "https://yiwuolwan.com/#hasan-olwan" },
+      "knowsLanguage": ["ar", "zh", "en"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Room 3125, Wuyue Plaza",
+        "addressLocality": "Yiwu",
+        "addressRegion": "Zhejiang",
+        "addressCountry": "CN"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Saudi Arabia" },
+        { "@type": "Country", "name": "Oman" },
+        { "@type": "Country", "name": "United Arab Emirates" },
+        { "@type": "Country", "name": "Kuwait" },
+        { "@type": "Country", "name": "Egypt" },
+        { "@type": "Country", "name": "Mexico" },
+        { "@type": "Country", "name": "Brazil" },
+        { "@type": "Country", "name": "Canada" }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/YiwuOlwan/",
+        "https://www.instagram.com/yiwuolwan/",
+        "REPLACE_WITH_LINKEDIN_URL",
+        "REPLACE_WITH_YOUTUBE_CHANNEL_URL"
+      ],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "REPLACE_WITH_PHONE_E164",
+        "availableLanguage": ["ar", "zh", "en"],
+        "areaServed": "Worldwide"
+      }],
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "البحث عن الموردين في سوق ييوو" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "التحقق من المصانع والموردين" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "فحص الجودة قبل الشحن" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "التخزين والتجميع في ييوو" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "الشحن الدولي وحاويات 40HQ" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "جولات سوق ييوو وزيارات المصانع" } }
+      ]
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://yiwuolwan.com/#hasan-olwan",
+      "name": "حسن علوان",
+      "alternateName": "Hasan Olwan",
+      "jobTitle": "مستشار تجارة دولية",
+      "description": "مستشار تجارة دولية مقيم في ييوو بالصين منذ 2009، متخصص في ربط التجار والشركات العربية بالموردين والمصانع الصينية.",
+      "worksFor": { "@id": "https://yiwuolwan.com/#organization" },
+      "url": "https://yiwuolwan.com/about-us/",
+      "image": "https://yiwuolwan.com/wp-content/uploads/2026/03/hasan-olwan-office-scaled.webp",
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Yiwu, Zhejiang, China"
+      },
+      "sameAs": [
+        "https://hasanolwan.com/",
+        "REPLACE_WITH_LINKEDIN_URL"
+      ],
+      "knowsAbout": [
+        "الاستيراد من الصين",
+        "سوق ييوو",
+        "سوق الفوتيان",
+        "التحقق من الموردين الصينيين",
+        "فحص الجودة قبل الشحن",
+        "الشحن البحري بالحاويات",
+        "سلاسل التوريد"
+      ]
+    },
+
+    {
+      "@type": "WebPage",
+      "@id": "https://yiwuolwan.com/#webpage",
+      "url": "https://yiwuolwan.com/",
+      "name": "الاستيراد من الصين مع ييوو علوان | وكيلك الموثوق منذ 2009",
+      "description": "ييوو علوان: مكتب استيراد عربي في ييوو منذ 2009. 19+ سنة، 4,000+ كونتينر، عمولة 5%. بحث عن الموردين، فحص جودة، وشحن حاويات لأكثر من 50 دولة.",
+      "inLanguage": "ar",
+      "isPartOf": { "@id": "https://yiwuolwan.com/#organization" },
+      "about": { "@id": "https://yiwuolwan.com/#organization" },
+      "primaryImageOfPage": "https://yiwuolwan.com/wp-content/uploads/2026/03/import-from-china-1.png",
+      "datePublished": "REPLACE_WITH_REAL_LAUNCH_DATE",
+      "dateModified": "2026-09-19",
+      "author": { "@id": "https://yiwuolwan.com/#hasan-olwan" },
+      "publisher": { "@id": "https://yiwuolwan.com/#organization" },
+      "mentions": [
+        {
+          "@type": "Place",
+          "name": "Yiwu International Trade City",
+          "alternateName": "سوق الفوتيان",
+          "sameAs": "https://en.wikipedia.org/wiki/Yiwu_International_Trade_City"
+        },
+        {
+          "@type": "Place",
+          "name": "Yiwu",
+          "sameAs": "https://ar.wikipedia.org/wiki/ييوو"
+        }
+      ]
+    },
+
+    {
+      "@type": "FAQPage",
+      "@id": "https://yiwuolwan.com/#faq",
+      "isPartOf": { "@id": "https://yiwuolwan.com/#webpage" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "من هو ييوو علوان؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "شركة متخصصة في الاستيراد من الصين والمصادر التجارية، مقرها مدينة ييوو، يقودها حسن علوان المقيم فيها منذ 2009. الخبرة تتجاوز 19 عاماً و4,000 كونتينر مشحون لعملاء في المكسيك وعُمان والبرازيل والخليج ومصر."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل تتعاملون مع أفراد بكميات صغيرة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا. الخدمة للمستوردين الجادين بكميات كونتينر 20 أو 40 قدماً فقط. للكميات الصغيرة ننصح بالشراء عبر المنصات الإلكترونية أو بوسيط شحن مشترك."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف أبدأ التعامل معكم؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "تواصل عبر واتساب أو نموذج التواصل وأرسل المنتج والكمية والمواصفات. نناقش احتياجك ونقدم خطة عمل واضحة بالتكلفة والوقت المتوقع قبل أي التزام مالي."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كم عمولة مكتب الاستيراد؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "5% من قيمة البضاعة. تشمل البحث عن المورد والتفاوض ومتابعة الإنتاج والفحص والتجميع، ولا تشمل تكلفة الشحن والجمارك التي تُدفع بفواتيرها الأصلية."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كم تستغرق الشحنة من ييوو إلى السعودية؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "الإنتاج عادة 20 إلى 40 يوماً حسب المنتج، ثم الشحن البحري من نينغبو إلى جدة أو الدمام 20 إلى 30 يوماً. الإجمالي المعتاد 45 إلى 75 يوماً من دفع العربون إلى الوصول، وقد يزيد في مواسم الذروة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يمكنني زيارة سوق ييوو معكم؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم. نرافقك شخصياً في جولات سوق الفوتيان وزيارات المصانع، ونتولى الترجمة والتفاوض والتوثيق أثناء الجولة. الحجز المسبق مطلوب لترتيب زيارات المصانع."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل الخدمة متوفرة لكل الدول؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نشحن لأكثر من 50 دولة حول العالم، مع خبرة خاصة بأسواق السعودية وعُمان والخليج ومصر والمكسيك والبرازيل. نرد على الاستفسارات خلال 24 ساعة في أيام العمل، وغالباً أسرع عبر واتساب."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
